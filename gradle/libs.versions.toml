@@ -1,0 +1,75 @@
+[versions]
+agp = "8.8.2"
+kotlin = "2.0.0"
+coreKtx = "1.16.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+lifecycleLivedataKtx = "2.9.0"
+activityCompose = "1.10.1"
+composeBom = "2024.04.01"
+
+retrofit      = "3.0.0"   # May 2025 stable release
+paging        = "3.3.6"   # Feb 12 2025
+serialization = "1.8.0"   # Jan 2025
+datastore     = "1.1.7"   # May 20 2025
+hilt          = "2.56.2"  # Apr 16 2025
+coil          = "3.2.0"   # 2025-Q2
+
+room = "2.7.1"
+navigationComposeVersion = "2.9.0"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleLivedataKtx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationComposeVersion" }
+
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+room-paging = { module = "androidx.room:room-paging", version.ref = "room" }
+
+# Retrofit
+retrofit                       = { module = "com.squareup.retrofit2:retrofit",            version.ref = "retrofit" }
+retrofit-converter-gson        = { module = "com.squareup.retrofit2:converter-gson",      version.ref = "retrofit" }
+retrofit-converter-moshi       = { module = "com.squareup.retrofit2:converter-moshi",     version.ref = "retrofit" }
+
+# Paging
+paging-runtime-ktx             = { module = "androidx.paging:paging-runtime-ktx",         version.ref = "paging" }
+paging-compose                 = { module = "androidx.paging:paging-compose",             version.ref = "paging" }
+paging-testing                 = { module = "androidx.paging:paging-testing",             version.ref = "paging" }
+
+# kotlinx-serialization
+kotlinx-serialization-json     = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+
+# DataStore (Preferences)
+androidx-datastore-preferences           = { module = "androidx.datastore:datastore-preferences",   version.ref = "datastore" }
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
+
+# Dagger-Hilt
+dagger-hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+
+# Coil 3
+coil                 = { module = "io.coil-kt.coil3:coil-compose",              version.ref = "coil" }
+coil-network-okhttp            = { module = "io.coil-kt.coil3:coil-network-okhttp",       version.ref = "coil" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+
+dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+
