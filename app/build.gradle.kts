@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.dagger.hilt)
-    id("kotlin-kapt")
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -91,11 +91,11 @@ dependencies {
     // Room
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
-    kapt(libs.room.compiler)       // or ksp(...) if you prefer
+    ksp(libs.room.compiler)       // or ksp(...) if you prefer
     implementation(libs.room.paging) // optional
 
     // Hilt
     implementation(libs.hilt.android)
 //    ksp(libs.dagger.hilt.android.compiler)
-    kapt(libs.dagger.hilt.android.compiler)
+    ksp(libs.dagger.hilt.android.compiler)
 }

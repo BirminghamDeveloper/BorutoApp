@@ -9,6 +9,8 @@ lifecycleLivedataKtx = "2.9.0"
 activityCompose = "1.10.1"
 composeBom = "2024.04.01"
 
+ksp = "2.0.0-1.0.21"
+
 retrofit      = "3.0.0"   # May 2025 stable release
 paging        = "3.3.6"   # Feb 12 2025
 serialization = "1.8.0"   # Jan 2025
@@ -36,6 +38,7 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationComposeVersion" }
 
+# Rooms
 room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
@@ -73,3 +76,5 @@ kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "ko
 
 dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 
+#ksp
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
