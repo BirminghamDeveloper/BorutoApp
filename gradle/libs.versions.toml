@@ -13,13 +13,17 @@ ksp = "2.0.0-1.0.21"
 
 retrofit      = "3.0.0"   # May 2025 stable release
 paging        = "3.3.6"   # Feb 12 2025
-serialization = "1.8.0"   # Jan 2025
+serialization = "2.1.10"   # Jan 2025
 datastore     = "1.1.7"   # May 20 2025
 hilt          = "2.56.2"  # Apr 16 2025
 coil          = "3.2.0"   # 2025-Q2
 
 room = "2.7.1"
 navigationComposeVersion = "2.9.0"
+
+accompanist = "0.37.3"   # latest (Apr 2025) :contentReference[oaicite:0]{index=0}
+palette     = "1.0.0"    # only stable release :contentReference[oaicite:1]{index=1}
+
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -36,8 +40,9 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationComposeVersion" }
 
+#Navigation Compose
+navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationComposeVersion" }
 # Rooms
 room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
@@ -69,12 +74,21 @@ hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt"
 coil                 = { module = "io.coil-kt.coil3:coil-compose",              version.ref = "coil" }
 coil-network-okhttp            = { module = "io.coil-kt.coil3:coil-network-okhttp",       version.ref = "coil" }
 
+accompanist-pager              = { module = "com.google.accompanist:accompanist-pager",              version.ref = "accompanist" }
+accompanist-pager-indicators   = { module = "com.google.accompanist:accompanist-pager-indicators",   version.ref = "accompanist" }
+accompanist-swiperefresh       = { module = "com.google.accompanist:accompanist-swiperefresh",       version.ref = "accompanist" }
+accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanist" }
+
+palette-ktx                    = { module = "androidx.palette:palette-ktx", version.ref = "palette" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
 dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+
+kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "serialization" }
 
 #ksp
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

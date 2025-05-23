@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.dagger.hilt)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlinx.serialization)
 }
 
 android {
@@ -42,8 +43,6 @@ android {
 }
 
 dependencies {
-    val nav_version = "2.9.0"
-    val room_version = "2.7.1"
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -98,4 +97,13 @@ dependencies {
     implementation(libs.hilt.android)
 //    ksp(libs.dagger.hilt.android.compiler)
     ksp(libs.dagger.hilt.android.compiler)
+
+    // Accompanist
+    implementation(libs.accompanist.pager)
+    implementation(libs.accompanist.pager.indicators)
+    implementation(libs.accompanist.swiperefresh)
+    implementation(libs.accompanist.systemuicontroller)
+
+// Palette API
+    implementation(libs.palette.ktx)
 }
