@@ -83,10 +83,6 @@ dependencies {
     implementation(libs.coil)
     implementation(libs.coil.network.okhttp)            // optional
 
-    // DataStore
-    implementation(libs.androidx.datastore.preferences)
-    implementation(libs.androidx.lifecycle.livedata.ktx)
-
     // Room
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
@@ -98,11 +94,11 @@ dependencies {
 //    ksp(libs.dagger.hilt.android.compiler)
     ksp(libs.dagger.hilt.android.compiler)
 
-    // Accompanist
+    /*// Accompanist
     implementation(libs.accompanist.pager)
     implementation(libs.accompanist.pager.indicators)
     implementation(libs.accompanist.swiperefresh)
-    implementation(libs.accompanist.systemuicontroller)
+    implementation(libs.accompanist.systemuicontroller)*/
 
 // Palette API
     implementation(libs.palette.ktx)
