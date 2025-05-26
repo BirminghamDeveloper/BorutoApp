@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.hashinology.borutoapp.utils.Constants.DETAILS_ARGUMENT_KEY
 import com.hashinology.presentation.screens.splash.SplashScreen
+import com.hashinology.presentation.screens.welcome.WelcomeScreen
 
 @Composable
 fun SetupNavGraph(navController: NavHostController){
@@ -16,10 +17,10 @@ fun SetupNavGraph(navController: NavHostController){
         startDestination = Screen.Splash.route
     ){
         composable(route = Screen.Splash.route){
-            SplashScreen(navController)
+//            SplashScreen(navController)
         }
         composable(route = Screen.Welcome.route){
-
+            WelcomeScreen(navController)
         }
         composable(route = Screen.Home.route){
 

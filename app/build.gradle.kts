@@ -100,6 +100,9 @@ dependencies {
     implementation(libs.accompanist.swiperefresh)
     implementation(libs.accompanist.systemuicontroller)*/
 
-// Palette API
+    // Palette API
     implementation(libs.palette.ktx)
+
+    // Splash API
+    implementation("androidx.core:core-splashscreen:1.0.1")
 }
