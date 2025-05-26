@@ -7,15 +7,15 @@ class DatabaseConverter {
 
     @TypeConverter
     fun convertListToString(list: List<String>): String{
-        val sb = StringBuilder()
+        /*val sb = StringBuilder()
         for (item in list){
             sb.append(item).append(separator)
         }
 
         sb.setLength(sb.length - separator.length)
-        return sb.toString()
+        return sb.toString()*/
 
-//        return list.joinToString(separator = separator)
+        return list.joinToString(separator = separator)
     }
 
     @TypeConverter
