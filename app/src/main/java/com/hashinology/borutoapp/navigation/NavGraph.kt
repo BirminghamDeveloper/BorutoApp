@@ -14,11 +14,11 @@ import com.hashinology.presentation.screens.welcome.WelcomeScreen
 fun SetupNavGraph(navController: NavHostController){
     NavHost(
         navController = navController,
-        startDestination = Screen.Splash.route
+        startDestination = Screen.Welcome.route
     ){
-        composable(route = Screen.Splash.route){
-//            SplashScreen(navController)
-        }
+        /*composable(route = Screen.Splash.route){
+            SplashScreen(navController)
+        }*/
         composable(route = Screen.Welcome.route){
             WelcomeScreen(navController)
         }
