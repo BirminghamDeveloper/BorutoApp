@@ -20,7 +20,7 @@ fun SetupNavGraph(navController: NavHostController){
             SplashScreen(navController)
         }*/
         composable(route = Screen.Welcome.route){
-            WelcomeScreen(navController)
+            WelcomeScreen({})
         }
         composable(route = Screen.Home.route){
 
