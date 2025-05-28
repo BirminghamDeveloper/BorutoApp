@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.hashinology.borutoapp.utils.Constants.DETAILS_ARGUMENT_KEY
+import com.hashinology.presentation.screens.home.HomeScreen
 import com.hashinology.presentation.screens.splash.SplashScreen
 import com.hashinology.presentation.screens.welcome.WelcomeScreen
 
@@ -23,7 +24,7 @@ fun SetupNavGraph(navController: NavHostController){
             WelcomeScreen({})
         }
         composable(route = Screen.Home.route){
-
+            HomeScreen()
         }
         composable(
             route = Screen.Details.route,

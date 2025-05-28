@@ -93,6 +93,7 @@ dependencies {
     implementation(libs.hilt.android)
 //    ksp(libs.dagger.hilt.android.compiler)
     ksp(libs.dagger.hilt.android.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
 
     /*// Accompanist
     implementation(libs.accompanist.pager)
