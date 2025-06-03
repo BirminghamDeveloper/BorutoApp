@@ -48,7 +48,6 @@ import com.hashinology.domain.model.OnBoardingPage
 
 @Composable
 fun WelcomeScreen(
-//    welcomeVM: WelcomeViewModel = hiltViewModel(),
     onFinishButtonClick : () -> Unit
 ) {
     val pages = listOf(
@@ -92,8 +91,6 @@ fun WelcomeScreen(
             pagerState = pagerState
         ) {
             onFinishButtonClick()
-
-//            welcomeVM.saveOnBoardingState(complete = true)
         }
     }
 }
