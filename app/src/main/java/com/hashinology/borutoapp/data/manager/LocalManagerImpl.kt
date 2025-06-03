@@ -1,4 +1,4 @@
-package com.hashinology.borutoapp.data.repository
+package com.hashinology.borutoapp.data.manager
 
 import android.content.Context
 import androidx.datastore.core.DataStore
@@ -10,7 +10,7 @@ import androidx.datastore.preferences.core.emptyPreferences
 import androidx.datastore.preferences.preferencesDataStore
 import com.hashinology.borutoapp.utils.Constants.PREFERENCES_KEY
 import com.hashinology.borutoapp.utils.Constants.PREFERENCES_NAME
-import com.hashinology.domain.repositories.DataStoreOperations
+import com.hashinology.domain.manager.LocalManager
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
@@ -18,7 +18,7 @@ import kotlinx.coroutines.flow.map
 // create extension variable will be used to access the Data Store
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = PREFERENCES_NAME)
 
-class DataStoreOperationsImpl(context: Context): DataStoreOperations {
+class DataStoreOperationsImpl(context: Context): LocalManager {
 
     // Below will use to tell out datastore library under which name key that the boolean value will be stored
     private object PreferenceKey{

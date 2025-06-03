@@ -1,17 +1,17 @@
 package com.hashinology.borutoapp.data.repository
 
-import com.hashinology.domain.repositories.DataStoreOperations
+import com.hashinology.domain.manager.LocalManager
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class Repository @Inject constructor(
-    private val dataStoreOperations: DataStoreOperations
+    private val localManager: LocalManager
 ){
     suspend fun saveOnBoadingState(completed: Boolean){
-        dataStoreOperations.saveOnBoardingState(completed)
+        localManager.saveOnBoardingState(completed)
     }
 
     fun readOnBoardingState(): Flow<Boolean>{
-        return dataStoreOperations.readOnBoardingState()
+        return localManager.readOnBoardingState()
     }
 }

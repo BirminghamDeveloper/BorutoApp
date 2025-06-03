@@ -1,9 +1,9 @@
 package com.hashinology.borutoapp.di
 
 import android.content.Context
-import com.hashinology.borutoapp.data.repository.DataStoreOperationsImpl
+import com.hashinology.borutoapp.data.manager.DataStoreOperationsImpl
 import com.hashinology.borutoapp.data.repository.Repository
-import com.hashinology.domain.repositories.DataStoreOperations
+import com.hashinology.domain.manager.LocalManager
 import com.hashinology.domain.use_cases.UseCases
 import com.hashinology.domain.use_cases.read_onboarding.ReadOnBoardingUseCase
 import com.hashinology.domain.use_cases.save_onboard.SaveOnBoardingUseCase
@@ -25,7 +25,7 @@ object RepositoryModule {
      */
     fun provideDataStoreOperations(
         @ApplicationContext context: Context
-    ): DataStoreOperations{
+    ): LocalManager{
         return DataStoreOperationsImpl(context)
     }
 
