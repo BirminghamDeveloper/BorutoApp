@@ -19,6 +19,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.hashinology.borutoapp.R
 import com.hashinology.borutoapp.ui.theme.Purple500
@@ -26,7 +27,10 @@ import com.hashinology.borutoapp.ui.theme.Purple700
 
 
 @Composable
-fun SplashScreen(navController: NavHostController) {
+fun SplashScreen(
+    navController: NavHostController,
+    splashVM: SplashViewModel = hiltViewModel()
+) {
     val rotate = remember { androidx.compose.animation.core.Animatable(0f) }
 
     LaunchedEffect(key1 = true) {

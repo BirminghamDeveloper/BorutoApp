@@ -1,6 +1,8 @@
 package com.hashinology.borutoapp.navigation
 
+import android.util.Log
 import androidx.compose.runtime.Composable
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -10,18 +12,29 @@ import com.hashinology.borutoapp.utils.Constants.DETAILS_ARGUMENT_KEY
 import com.hashinology.presentation.screens.home.HomeScreen
 import com.hashinology.presentation.screens.splash.SplashScreen
 import com.hashinology.presentation.screens.welcome.WelcomeScreen
+import com.hashinology.presentation.screens.welcome.WelcomeViewModel
 
 @Composable
-fun SetupNavGraph(navController: NavHostController){
+fun SetupNavGraph(
+    navController: NavHostController,
+    startDestination: String
+){
+    val welcomeVM: WelcomeViewModel = hiltViewModel()
     NavHost(
         navController = navController,
-        startDestination = Screen.Welcome.route
+        startDestination = startDestination
     ){
         /*composable(route = Screen.Splash.route){
             SplashScreen(navController)
         }*/
         composable(route = Screen.Welcome.route){
-            WelcomeScreen({})
+            WelcomeScreen(
+                onFinishButtonClick = {
+                    welcomeVM.saveOnBoardingState(complete = true)
+                    navController.popBackStack()
+                    navController.navigate(Screen.Home.route)
+                }
+            )
         }
         composable(route = Screen.Home.route){
             HomeScreen()
