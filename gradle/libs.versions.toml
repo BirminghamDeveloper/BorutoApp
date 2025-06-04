@@ -14,6 +14,7 @@ ksp = "2.0.0-1.0.21"
 
 retrofit      = "3.0.0"   # May 2025 stable release
 paging        = "3.3.6"   # Feb 12 2025
+retrofit2KotlinxSerializationConverter = "1.0.0"
 serialization = "1.8.1"   # Jan 2025
 datastore     = "1.1.7"   # May 20 2025
 hilt          = "2.56.2"  # Apr 16 2025
@@ -46,6 +47,7 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 #Navigation Compose
 navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationComposeVersion" }
 # Rooms
+retrofit2-kotlinx-serialization-converter = { module = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter", version.ref = "retrofit2KotlinxSerializationConverter" }
 room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }

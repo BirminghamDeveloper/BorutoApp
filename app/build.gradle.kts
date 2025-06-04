@@ -64,6 +64,7 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)       // optional
     implementation(libs.retrofit.converter.moshi)      // optional
+    implementation(libs.retrofit2.kotlinx.serialization.converter) //jakewharton
 
 // ── Paging ───────────────────────────────────────────────
     implementation(libs.paging.runtime.ktx)
