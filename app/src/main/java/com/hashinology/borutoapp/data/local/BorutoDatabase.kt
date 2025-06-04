@@ -1,18 +1,15 @@
 package com.hashinology.borutoapp.data.local
 
-import android.content.Context
 import androidx.room.Database
-import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.hashinology.borutoapp.data.local.dao.HeroDao
 import com.hashinology.borutoapp.data.local.dao.HeroRemoteKeyDao
-import com.hashinology.borutoapp.utils.Constants.BORUTO_DATABASE
 import com.hashinology.domain.model.Hero
-import com.hashinology.domain.model.HeroRemoteKey
+import com.hashinology.domain.model.HeroRemoteKeys
 
 @Database(
-    entities = [Hero::class, HeroRemoteKey::class],
+    entities = [Hero::class, HeroRemoteKeys::class],
     version = 1
 )
 @TypeConverters(DatabaseConverter::class)
