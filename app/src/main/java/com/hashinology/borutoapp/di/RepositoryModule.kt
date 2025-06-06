@@ -5,6 +5,7 @@ import com.hashinology.borutoapp.data.manager.DataStoreOperationsImpl
 import com.hashinology.borutoapp.data.repository.Repository
 import com.hashinology.domain.manager.LocalManager
 import com.hashinology.domain.use_cases.UseCases
+import com.hashinology.domain.use_cases.get_all_heroes.GetAllHeroesUseCase
 import com.hashinology.domain.use_cases.read_onboarding.ReadOnBoardingUseCase
 import com.hashinology.domain.use_cases.save_onboard.SaveOnBoardingUseCase
 import dagger.Module
@@ -35,7 +36,8 @@ object RepositoryModule {
     fun provideUseCases(repo: Repository): UseCases{
         return UseCases(
             saveOnBoardingUseCase = SaveOnBoardingUseCase(repo),
-            readOnBoardingUseCase = ReadOnBoardingUseCase(repo)
+            readOnBoardingUseCase = ReadOnBoardingUseCase(repo),
+            getAllHeroesUseCase = GetAllHeroesUseCase(repo)
         )
     }
 }
