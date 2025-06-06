@@ -4,7 +4,7 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.hashinology.borutoapp.data.local.dao.HeroDao
-import com.hashinology.borutoapp.data.local.dao.HeroRemoteKeyDao
+import com.hashinology.borutoapp.data.local.dao.HeroRemoteKeysDao
 import com.hashinology.domain.model.Hero
 import com.hashinology.domain.model.HeroRemoteKeys
 
@@ -15,7 +15,7 @@ import com.hashinology.domain.model.HeroRemoteKeys
 @TypeConverters(DatabaseConverter::class)
 abstract class BorutoDatabase: RoomDatabase() {
     abstract fun heroDao(): HeroDao
-    abstract fun heroRemoteKeyDao(): HeroRemoteKeyDao
+    abstract fun heroRemoteKeysDao(): HeroRemoteKeysDao
 
     /*// to use without using the di Old Style
     companion object{
