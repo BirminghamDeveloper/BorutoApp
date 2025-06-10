@@ -15,7 +15,7 @@ import kotlin.time.Duration.Companion.minutes
 @ExperimentalPagingApi
 class HeroRemoteMediator @Inject constructor(
     private val borutoApi: BorutoApi,
-    private val borutoDatabase: BorutoDatabase
+    private val borutoDatabase: BorutoDatabase /*= BorutoDatabase.getInstance()*/
 ) : RemoteMediator<Int, Hero>() {
     private val heroDao = borutoDatabase.heroDao()
     private val heroRemoteKeysDao = borutoDatabase.heroRemoteKeysDao()
