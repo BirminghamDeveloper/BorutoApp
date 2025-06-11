@@ -8,10 +8,10 @@ import com.hashinology.domain.model.HeroRemoteKeys
 
 @Dao
 interface HeroRemoteKeysDao {
-    @Query("SELECT * FROM hero_remote_key_table WHERE id= :heroID")
+    @Query("SELECT * FROM hero_remote_keys_table WHERE id= :heroID")
     suspend fun getRemoteKeys(heroID: Int): HeroRemoteKeys?
     @Insert(onConflict= OnConflictStrategy.REPLACE)
     suspend fun addAllRemoteKeys(heroRemoteKeys: List<HeroRemoteKeys>)
-    @Query("Delete FROM HERO_REMOTE_KEY_TABLE")
+    @Query("Delete FROM hero_remote_keys_table")
     suspend fun deleteAllRemoteKeys()
 }

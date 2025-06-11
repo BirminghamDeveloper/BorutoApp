@@ -2,11 +2,11 @@ package com.hashinology.domain.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.hashinology.borutoapp.utils.Constants.DETAILS_DATABASE_TABLE
+import com.hashinology.borutoapp.utils.Constants.HERO_DATABASE_TABLE
 import kotlinx.serialization.Serializable
 
 @Serializable
-@Entity(tableName = DETAILS_DATABASE_TABLE)
+@Entity(tableName = HERO_DATABASE_TABLE)
 data class Hero(
     @PrimaryKey(autoGenerate = true)
     val id: Int,

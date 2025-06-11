@@ -6,7 +6,7 @@ import retrofit2.http.Query
 
 interface BorutoApi {
     @GET("/boruto/heroes")
-    suspend fun getAllHerpes(
+    suspend fun getAllHeroes(
         @Query("page") page: Int = 1
     ): ApiResponse
 

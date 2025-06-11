@@ -10,7 +10,6 @@ import com.hashinology.borutoapp.data.remote.BorutoApi
 import com.hashinology.domain.model.Hero
 import com.hashinology.domain.model.HeroRemoteKeys
 import javax.inject.Inject
-import kotlin.time.Duration.Companion.minutes
 
 @ExperimentalPagingApi
 class HeroRemoteMediator @Inject constructor(
@@ -41,7 +40,7 @@ class HeroRemoteMediator @Inject constructor(
                     nextPage
                 }
             }
-            val response = borutoApi.getAllHerpes(page = page)
+            val response = borutoApi.getAllHeroes(page = page)
             if (response.heroes.isNotEmpty()) {
                 borutoDatabase.withTransaction {
                     if (loadType == LoadType.REFRESH) {
