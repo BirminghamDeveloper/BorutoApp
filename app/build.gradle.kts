@@ -71,6 +71,7 @@ dependencies {
     implementation(libs.paging.compose)                // Compose support
     testImplementation(libs.paging.testing)
 
+
 // ── kotlinx‑serialization ────────────────────────────────
     implementation(libs.kotlinx.serialization.json)
 

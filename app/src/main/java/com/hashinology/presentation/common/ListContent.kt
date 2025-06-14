@@ -1,6 +1,6 @@
 package com.hashinology.presentation.common
 
-import android.util.Log
+import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.paging.compose.LazyPagingItems
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
@@ -28,7 +29,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.navigation.NavHostController
-import androidx.paging.compose.LazyPagingItems
 import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import com.hashinology.borutoapp.R
@@ -42,12 +42,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
 import androidx.paging.LoadState
+import coil3.annotation.ExperimentalCoilApi
 import coil3.request.crossfade
 import com.hashinology.borutoapp.ui.theme.topAppBarContentColor
 import com.hashinology.borutoapp.utils.Constants.BASE_URL
 import com.hashinology.domain.model.Hero
 import com.hashinology.presentation.components.RatingWidget
 
+@ExperimentalCoilApi
 @Composable
 fun ListContent(
     padding: PaddingValues,
@@ -78,6 +80,7 @@ fun ListContent(
     }
 }
 
+@ExperimentalCoilApi
 @Composable
 fun handlePagingResult(
     heroes: LazyPagingItems<Hero>
@@ -95,14 +98,17 @@ fun handlePagingResult(
 //                ShimmerEffect()
                 false
             }
+
             error != null -> {
 //                EmptyScreen(error = error, heroes = heroes)
                 false
             }
+
             heroes.itemCount < 1 -> {
 //                EmptyScreen()
                 false
             }
+
             else -> true
         }
     }
@@ -123,7 +129,7 @@ fun HeroItem(
             },
         contentAlignment = Alignment.BottomStart
     ) {
-        Surface(shape = RoundedCornerShape(LARGE_PADDING)) {
+        Surface(shape = RoundedCornerShape(size = LARGE_PADDING)) {
             AsyncImage(
                 modifier = Modifier.fillMaxSize(),
                 model = ImageRequest.Builder(LocalContext.current)
@@ -133,7 +139,7 @@ fun HeroItem(
                 contentDescription = stringResource(R.string.hero_image),
                 contentScale = ContentScale.Crop,
                 placeholder = placeholder,   // ← fixed API
-                error       = placeholder
+                error = placeholder
             )
         }
 
@@ -186,9 +192,33 @@ fun HeroItem(
     }
 }
 
+@ExperimentalCoilApi
 @Preview
 @Composable
-private fun HeroItemPreview() {
+fun HeroItemPreview() {
+    HeroItem(
+        hero = Hero(
+            id = 1,
+            name = "Sasuke",
+            image = "",
+            about = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+            rating = 4.5,
+            power = 100,
+            month = "",
+            day = "",
+            family = listOf(),
+            abilities = listOf(),
+            natureTypes = listOf()
+        ),
+        navController = rememberNavController(),
+
+        )
+}
+
+@ExperimentalCoilApi
+@Composable
+@Preview(uiMode = UI_MODE_NIGHT_YES)
+fun HeroItemDarkPreview() {
     HeroItem(
         hero = Hero(
             id = 1,
@@ -203,7 +233,6 @@ private fun HeroItemPreview() {
             abilities = listOf(),
             natureTypes = listOf()
         ),
-        navController = rememberNavController(),
-
+        navController = rememberNavController()
     )
 }
