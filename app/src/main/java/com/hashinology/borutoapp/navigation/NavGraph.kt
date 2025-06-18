@@ -8,12 +8,14 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import coil3.annotation.ExperimentalCoilApi
 import com.hashinology.borutoapp.utils.Constants.DETAILS_ARGUMENT_KEY
 import com.hashinology.presentation.screens.home.HomeScreen
 import com.hashinology.presentation.screens.splash.SplashScreen
 import com.hashinology.presentation.screens.welcome.WelcomeScreen
 import com.hashinology.presentation.screens.welcome.WelcomeViewModel
 
+@ExperimentalCoilApi
 @Composable
 fun SetupNavGraph(
     navController: NavHostController,

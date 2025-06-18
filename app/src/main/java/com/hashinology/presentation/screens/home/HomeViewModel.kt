@@ -9,5 +9,5 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     useCases: UseCases
 ): ViewModel() {
-    val getAllHeroesUseCase = useCases.getAllHeroesUseCase
+    val getAllHeroes = useCases.getAllHeroesUseCase()
 }

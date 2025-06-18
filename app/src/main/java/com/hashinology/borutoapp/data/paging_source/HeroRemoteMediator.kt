@@ -23,7 +23,7 @@ class HeroRemoteMediator @Inject constructor(
         return try {
             val page = when (loadType) {
                 LoadType.REFRESH -> {
-                    val remoteKeys = getRemoteClosetToCurrentPosition(state)
+                    val remoteKeys = getRemoteKeyClosetToCurrentPosition(state)
                     remoteKeys?.nextPage?.minus(1) ?: 1
                 }
 
@@ -66,7 +66,7 @@ class HeroRemoteMediator @Inject constructor(
         }
     }
 
-    private suspend fun getRemoteClosetToCurrentPosition(
+    private suspend fun getRemoteKeyClosetToCurrentPosition(
         state: PagingState<Int, Hero>
     ): HeroRemoteKeys? {
         return state.anchorPosition?.let { positition ->

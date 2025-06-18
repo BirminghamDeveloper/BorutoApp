@@ -1,6 +1,7 @@
 package com.hashinology.presentation.common
 
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
+import android.util.Log
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -57,6 +58,7 @@ fun ListContent(
     navController: NavHostController
 ) {
     val result = handlePagingResult(heroes = heroes)
+    Log.d("ListContent", "ListContent: ${heroes.itemSnapshotList.items.size}")
 
     if (result) {
         LazyColumn(
@@ -125,7 +127,7 @@ fun HeroItem(
         modifier = Modifier
             .height(HERO_ITEM_HEIGHT)
             .clickable {
-                navController.navigate(Screen.Details.passheroId(hero.id))
+                navController.navigate(Screen.Details.passHeroId(hero.id))
             },
         contentAlignment = Alignment.BottomStart
     ) {

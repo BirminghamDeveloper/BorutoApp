@@ -19,6 +19,7 @@ import retrofit2.Retrofit
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
+@ExperimentalPagingApi
 
 @Module
 @InstallIn(SingletonComponent::class)

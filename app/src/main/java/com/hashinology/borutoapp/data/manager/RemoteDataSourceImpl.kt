@@ -12,8 +12,7 @@ import com.hashinology.borutoapp.utils.Constants.ITEMS_PER_PAGE
 import com.hashinology.domain.manager.RemoteDataSource
 import com.hashinology.domain.model.Hero
 import kotlinx.coroutines.flow.Flow
-
-@OptIn(ExperimentalPagingApi::class)
+@ExperimentalPagingApi
 class RemoteDataSourceImpl(
     private val borutoApi: BorutoApi,
     private val borutoDatabase: BorutoDatabase

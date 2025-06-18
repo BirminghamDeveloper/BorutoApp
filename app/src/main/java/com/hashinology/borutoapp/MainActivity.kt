@@ -16,6 +16,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import coil3.annotation.ExperimentalCoilApi
 import com.hashinology.borutoapp.navigation.Screen
 import com.hashinology.borutoapp.navigation.SetupNavGraph
 import com.hashinology.borutoapp.ui.theme.BorutoAppTheme
@@ -26,6 +27,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@ExperimentalCoilApi
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     private lateinit var navController: NavHostController
