@@ -49,6 +49,7 @@ import com.hashinology.borutoapp.ui.theme.topAppBarContentColor
 import com.hashinology.borutoapp.utils.Constants.BASE_URL
 import com.hashinology.domain.model.Hero
 import com.hashinology.presentation.components.RatingWidget
+import com.hashinology.presentation.components.ShimmerEffect
 
 @ExperimentalCoilApi
 @Composable
@@ -58,6 +59,7 @@ fun ListContent(
     navController: NavHostController
 ) {
     val result = handlePagingResult(heroes = heroes)
+
     Log.d("ListContent", "ListContent: ${heroes.itemSnapshotList.items.size}")
 
     if (result) {
@@ -97,12 +99,12 @@ fun handlePagingResult(
 
         return when {
             loadState.refresh is LoadState.Loading -> {
-//                ShimmerEffect()
+                ShimmerEffect()
                 false
             }
 
             error != null -> {
-//                EmptyScreen(error = error, heroes = heroes)
+                EmptyScreen(error = error)
                 false
             }
 
