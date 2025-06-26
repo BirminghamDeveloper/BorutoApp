@@ -6,7 +6,6 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
-import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -18,7 +17,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.ImeAction
@@ -28,6 +26,8 @@ import androidx.wear.compose.material.ContentAlpha
 import androidx.wear.compose.material.MaterialTheme
 import com.hashinology.borutoapp.R
 import com.hashinology.borutoapp.ui.theme.TOP_APP_BAR_HEIGHT
+import com.hashinology.borutoapp.ui.theme.topAppBarBackgroundColor
+import com.hashinology.borutoapp.ui.theme.topAppBarContentColor
 
 @Composable
 fun SearchTopBar(
@@ -57,7 +57,7 @@ fun SearchWidget(
             .height(TOP_APP_BAR_HEIGHT),
         shadowElevation = 4.dp,
         tonalElevation  = 4.dp,
-        color = MaterialTheme.colors.onBackground
+        color = topAppBarBackgroundColor
     ){
         TextField(
             modifier = Modifier.fillMaxWidth(),
@@ -71,7 +71,7 @@ fun SearchWidget(
                 )
             },
             textStyle = TextStyle(
-                color = MaterialTheme.colors.onSecondary
+                color = topAppBarContentColor
             ),
             singleLine = true,
             leadingIcon =
@@ -83,7 +83,7 @@ fun SearchWidget(
                     Icon(
                         imageVector = Icons.Default.Search,
                         contentDescription = stringResource(R.string.search_icon),
-                        tint = MaterialTheme.colors.onSecondary
+                        tint = topAppBarContentColor
                     )
                 }
             },
@@ -101,7 +101,7 @@ fun SearchWidget(
                     Icon(
                         imageVector = Icons.Default.Close,
                         contentDescription = stringResource(R.string.close_icon),
-                        tint = MaterialTheme.colors.onSecondary
+                        tint = topAppBarContentColor
                     )
                 }
             },
@@ -115,7 +115,7 @@ fun SearchWidget(
             ),
             colors = TextFieldDefaults.colors(
                 focusedContainerColor = Color.Transparent,
-                cursorColor = MaterialTheme.colors.onSurface
+                cursorColor = topAppBarContentColor
             )
         )
     }
