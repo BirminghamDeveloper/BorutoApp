@@ -11,6 +11,7 @@ import androidx.navigation.navArgument
 import coil3.annotation.ExperimentalCoilApi
 import com.hashinology.borutoapp.utils.Constants.DETAILS_ARGUMENT_KEY
 import com.hashinology.presentation.screens.home.HomeScreen
+import com.hashinology.presentation.screens.search.SearchScreen
 import com.hashinology.presentation.screens.splash.SplashScreen
 import com.hashinology.presentation.screens.welcome.WelcomeScreen
 import com.hashinology.presentation.screens.welcome.WelcomeViewModel
@@ -52,7 +53,7 @@ fun SetupNavGraph(
 
         }
         composable(route = Screen.Search.route){
-
+            SearchScreen()
         }
     }
 }
