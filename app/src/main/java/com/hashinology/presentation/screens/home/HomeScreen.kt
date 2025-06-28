@@ -8,6 +8,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.paging.compose.collectAsLazyPagingItems
 import coil3.annotation.ExperimentalCoilApi
+import com.hashinology.borutoapp.navigation.Screen
 import com.hashinology.presentation.common.ListContent
 
 @OptIn(ExperimentalCoilApi::class)
@@ -23,7 +24,9 @@ fun HomeScreen(
 
     Scaffold(
         topBar = {
-            HomeTopBar( onSearchClicked = {} )
+            HomeTopBar( onSearchClicked = {
+                navController.navigate(Screen.Search.route)
+            } )
         },
         content = { padding ->
             ListContent(
