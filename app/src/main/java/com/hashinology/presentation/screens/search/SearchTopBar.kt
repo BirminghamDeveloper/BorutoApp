@@ -115,7 +115,10 @@ fun SearchWidget(
             ),
             colors = TextFieldDefaults.colors(
                 focusedContainerColor = Color.Transparent,
-                cursorColor = topAppBarContentColor
+                cursorColor = topAppBarContentColor,
+                focusedIndicatorColor = Color.Transparent,
+                unfocusedLabelColor = Color.Transparent,
+                disabledIndicatorColor = Color.Transparent
             )
         )
     }
