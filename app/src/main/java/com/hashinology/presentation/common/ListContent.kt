@@ -109,7 +109,7 @@ fun handlePagingResult(
             }
 
             heroes.itemCount < 1 -> {
-//                EmptyScreen()
+                EmptyScreen()
                 false
             }
 

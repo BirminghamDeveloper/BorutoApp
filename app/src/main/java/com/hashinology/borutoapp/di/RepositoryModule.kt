@@ -8,6 +8,7 @@ import com.hashinology.domain.use_cases.UseCases
 import com.hashinology.domain.use_cases.get_all_heroes.GetAllHeroesUseCase
 import com.hashinology.domain.use_cases.read_onboarding.ReadOnBoardingUseCase
 import com.hashinology.domain.use_cases.save_onboard.SaveOnBoardingUseCase
+import com.hashinology.domain.use_cases.search_heroes.SearchHeroesUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -37,7 +38,8 @@ object RepositoryModule {
         return UseCases(
             saveOnBoardingUseCase = SaveOnBoardingUseCase(repo),
             readOnBoardingUseCase = ReadOnBoardingUseCase(repo),
-            getAllHeroesUseCase = GetAllHeroesUseCase(repo)
+            getAllHeroesUseCase = GetAllHeroesUseCase(repo),
+            searchHeroesUseCase = SearchHeroesUseCase(repo)
         )
     }
 }

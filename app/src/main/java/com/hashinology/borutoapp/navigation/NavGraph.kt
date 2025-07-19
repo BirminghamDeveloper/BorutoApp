@@ -1,6 +1,7 @@
 package com.hashinology.borutoapp.navigation
 
 import android.util.Log
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
@@ -16,6 +17,7 @@ import com.hashinology.presentation.screens.splash.SplashScreen
 import com.hashinology.presentation.screens.welcome.WelcomeScreen
 import com.hashinology.presentation.screens.welcome.WelcomeViewModel
 
+@ExperimentalMaterial3Api
 @ExperimentalCoilApi
 @Composable
 fun SetupNavGraph(
@@ -53,7 +55,7 @@ fun SetupNavGraph(
 
         }
         composable(route = Screen.Search.route){
-            SearchScreen()
+            SearchScreen(navHostController = navController)
         }
     }
 }
