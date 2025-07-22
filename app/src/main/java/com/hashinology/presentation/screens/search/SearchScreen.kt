@@ -8,8 +8,10 @@ import androidx.compose.runtime.getValue
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.paging.compose.collectAsLazyPagingItems
+import coil3.annotation.ExperimentalCoilApi
 import com.hashinology.presentation.common.ListContent
 
+@ExperimentalCoilApi
 @ExperimentalMaterial3Api
 @Composable
 fun SearchScreen(
