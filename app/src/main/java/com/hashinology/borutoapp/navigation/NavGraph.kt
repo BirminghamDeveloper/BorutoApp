@@ -11,6 +11,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import coil3.annotation.ExperimentalCoilApi
 import com.hashinology.borutoapp.utils.Constants.DETAILS_ARGUMENT_KEY
+import com.hashinology.presentation.screens.details.DetailsScreen
 import com.hashinology.presentation.screens.home.HomeScreen
 import com.hashinology.presentation.screens.search.SearchScreen
 import com.hashinology.presentation.screens.splash.SplashScreen
@@ -52,7 +53,11 @@ fun SetupNavGraph(
                 type = NavType.IntType
             })
         ){
-
+            DetailsScreen(
+                onCloseClicked = {
+                    navController.popBackStack()
+                }
+            )
         }
         composable(route = Screen.Search.route){
             SearchScreen(navHostController = navController)

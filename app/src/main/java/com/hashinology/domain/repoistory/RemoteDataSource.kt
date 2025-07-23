@@ -1,4 +1,4 @@
-package com.hashinology.domain.manager
+package com.hashinology.domain.repoistory
 
 import androidx.paging.PagingData
 import com.hashinology.domain.model.Hero

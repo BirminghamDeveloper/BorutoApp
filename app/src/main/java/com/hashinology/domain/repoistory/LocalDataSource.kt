@@ -1,4 +1,4 @@
-package com.hashinology.borutoapp.data.repository
+package com.hashinology.domain.repoistory
 
 import com.hashinology.domain.model.Hero
 

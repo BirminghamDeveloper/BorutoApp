@@ -1,4 +1,4 @@
-package com.hashinology.borutoapp.data.manager
+package com.hashinology.borutoapp.data.repository
 
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.Pager
@@ -9,7 +9,7 @@ import com.hashinology.borutoapp.data.paging_source.HeroRemoteMediator
 import com.hashinology.borutoapp.data.paging_source.SearchHeroSource
 import com.hashinology.borutoapp.data.remote.BorutoApi
 import com.hashinology.borutoapp.utils.Constants.ITEMS_PER_PAGE
-import com.hashinology.domain.manager.RemoteDataSource
+import com.hashinology.domain.repoistory.RemoteDataSource
 import com.hashinology.domain.model.Hero
 import kotlinx.coroutines.flow.Flow
 

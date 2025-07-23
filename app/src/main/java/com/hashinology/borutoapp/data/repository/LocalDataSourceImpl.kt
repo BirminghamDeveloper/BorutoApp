@@ -2,6 +2,7 @@ package com.hashinology.borutoapp.data.repository
 
 import com.hashinology.borutoapp.data.local.BorutoDatabase
 import com.hashinology.domain.model.Hero
+import com.hashinology.domain.repoistory.LocalDataSource
 
 class LocalDataSourceImpl(borutoDatabase: BorutoDatabase): LocalDataSource {
 

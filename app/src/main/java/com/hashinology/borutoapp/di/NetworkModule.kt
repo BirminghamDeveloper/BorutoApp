@@ -1,18 +1,16 @@
 package com.hashinology.borutoapp.di
 import androidx.paging.ExperimentalPagingApi
 import com.hashinology.borutoapp.data.local.BorutoDatabase
-import com.hashinology.borutoapp.data.manager.RemoteDataSourceImpl
+import com.hashinology.borutoapp.data.repository.RemoteDataSourceImpl
 import com.hashinology.borutoapp.data.remote.BorutoApi
 import com.hashinology.borutoapp.utils.Constants.BASE_URL
-import com.hashinology.domain.manager.RemoteDataSource
+import com.hashinology.domain.repoistory.RemoteDataSource
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
-import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -55,7 +53,7 @@ object NetworkModule {
     fun provideRemoteDataSource(
         borutoApi: BorutoApi,
         borutoDatabase: BorutoDatabase
-    ): RemoteDataSource{
+    ): RemoteDataSource {
         return RemoteDataSourceImpl(
             borutoApi = borutoApi,
             borutoDatabase = borutoDatabase

@@ -6,6 +6,7 @@ import com.hashinology.borutoapp.data.repository.Repository
 import com.hashinology.domain.manager.LocalManager
 import com.hashinology.domain.use_cases.UseCases
 import com.hashinology.domain.use_cases.get_all_heroes.GetAllHeroesUseCase
+import com.hashinology.domain.use_cases.get_selected_hero.GetSelectedHeroUseCase
 import com.hashinology.domain.use_cases.read_onboarding.ReadOnBoardingUseCase
 import com.hashinology.domain.use_cases.save_onboard.SaveOnBoardingUseCase
 import com.hashinology.domain.use_cases.search_heroes.SearchHeroesUseCase
@@ -39,7 +40,8 @@ object RepositoryModule {
             saveOnBoardingUseCase = SaveOnBoardingUseCase(repo),
             readOnBoardingUseCase = ReadOnBoardingUseCase(repo),
             getAllHeroesUseCase = GetAllHeroesUseCase(repo),
-            searchHeroesUseCase = SearchHeroesUseCase(repo)
+            searchHeroesUseCase = SearchHeroesUseCase(repo),
+            getSelectedHeroUseCase = GetSelectedHeroUseCase(repo)
         )
     }
 }
