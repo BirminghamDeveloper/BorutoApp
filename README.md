@@ -57,3 +57,12 @@ BorutoApp is a fully functional, modern Android application built using **Jetpac
 
 ```bash
 git clone https://github.com/BirminghamDeveloper/BorutoApp.git
+
+
+
+## Step 2 – Configure Android app to use your server
+
+In your app module, change the base URL in Constants.kt:
+
+```bash
+const val BASE_URL = "http://10.0.2.2:8080"
